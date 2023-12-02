@@ -1,4 +1,7 @@
-listnum = [1,2,3,4,5,6,7,8,9,10]
+listnum = []
+for x in range (10):
+    temp = int(input(f"Enter number {x+1}: "))
+    listnum.append(temp)
 even_num = 0
 odd_num = 0
 div_4 = 0
@@ -16,7 +19,7 @@ def is_prime(num):
             return False
     return True
 
-for i in range(0,len(listnum)-1):
+for i in range(0,len(listnum)):
     if listnum[i]%2 == 0:
         even_num += listnum[i]
         count1 += 1
@@ -29,7 +32,7 @@ for i in range(0,len(listnum)-1):
         count3 += 1
     
     if is_prime(listnum[i]):
-        prime += prime
+        prime += listnum[i]
         count4 += 1
         
 avg_even = even_num / count1
@@ -37,12 +40,12 @@ avg_odd = odd_num / count2
 avg_div_4 = div_4 / count3
 avg_prime = prime / count4
 
-print(even_num)
-print(odd_num)
-print(div_4)
-print(prime)
-print(avg_even)
-print(avg_odd)
-print(avg_div_4)
-print(avg_prime)
+print("Tổng số chắn:" , str(even_num))
+print("Tổng số lẻ:" , str(odd_num))
+print("Tổng số chia hết cho 4:" , str(div_4))
+print("Tổng số nguyên tố:" , str(prime))
+print("Trung bình số chẵn:" , str(avg_even))
+print("Trung bình số lẻ:" , str(avg_odd))
+print("Trung bình số chia hết cho 4:" , str(avg_div_4))
+print("Trung bình số nguyên tố:" , str(avg_prime))
 
