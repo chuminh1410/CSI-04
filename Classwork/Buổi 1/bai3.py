@@ -6,7 +6,7 @@ class BankAccount:
 
     def add_fund(self, amount):
         while amount < 0:
-            amount = int(input("Invalid! You can't add a negative amount to the account!\nHow much do you want to add to your account?: "))
+            amount = int(input("Invalid! You can't add negative amount.\nHow much do you want to add to your account?: "))
         
         self.fund += amount
         print(f"Balance after adding funds: {self.fund}")
