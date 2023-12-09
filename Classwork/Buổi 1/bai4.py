@@ -25,9 +25,7 @@ class HocSinh():
         ranking = self.determine_rank()
         print(f"Student {self.name}'s ranking is {ranking}")
 
-# Tạo một đối tượng HocSinh
-hoc_sinh_instance = HocSinh(name="Chu", math=2, literature=7)
+hoc_sinh_instance = HocSinh(name="Chu", math=2, literature=4)
 
-# Hiển thị điểm trung bình và xếp loại của học sinh
 hoc_sinh_instance.avg_score()
 hoc_sinh_instance.display_rank()
