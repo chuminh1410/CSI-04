@@ -4,31 +4,32 @@ class BankAccount:
         self.owner = owner
         self.fund = fund
 
-    def add_fund(self):
-        print(f"balance before adding fund: {self.fund}")
-        value = int(input("How much you wanna add to your account?: "))
-        while value < 0:
-            value = int(input("Invalid!, you cant add negative to the account!\nHow much you wanna add to your account?: "))
+    def add_fund(self, amount):
+        while amount < 0:
+            amount = int(input("Invalid! You can't add a negative amount to the account!\nHow much do you want to add to your account?: "))
+        
+        self.fund += amount
+        print(f"Balance after adding funds: {self.fund}")
 
-        self.fund += value
-        print(f"balance after adding fund: {self.fund}")
-
-    def withdraw(self):
-        print(f"balance before withdraw: {self.fund}")
-        value = int(input("How much you wanna withdraw from your account?: "))
-        while value > self.fund or value < 1:
-            value = int(input("Invalid!, you cant withdraw more than or negative the amount currently in the fund.\nHow much you wanna withdraw from your account?: "))
-        self.fund -= value
-        print(f"balance after withdraw: {self.fund}")
+    def withdraw(self, amount):
+        while amount > self.fund or amount < 1:
+            amount = int(input("Invalid! You can't withdraw more than the amount currently in the fund or a negative amount.\nHow much do you want to withdraw from your account?: "))
+        
+        self.fund -= amount
+        print(f"Balance after withdrawal: {self.fund}")
 
     def show_information(self):
         print("Here is your account information: ")
-        print(f"Account number: {self.STK}\nAccount belong to: {self.owner}\nAccount remaining funds: {self.fund}")
+        print(f"Account number: {self.STK}\nAccount belongs to: {self.owner}\nAccount remaining funds: {self.fund}")
 
 my_account = BankAccount(STK=7671238762, owner="Chu Minh", fund=2000)
 
 my_account.show_information()
 
-my_account.add_fund()
-my_account.withdraw()
+add_amount = int(input("How much do you want to add to your account?: "))
+my_account.add_fund(add_amount)
+
+withdraw_amount = int(input("How much do you want to withdraw from your account?: "))
+my_account.withdraw(withdraw_amount)
+
 my_account.show_information()
