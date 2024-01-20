@@ -36,4 +36,8 @@ def tim_tuyen_tinh(a):
     return result
 
 result = tim_tuyen_tinh(a)
+
 print(f"Số chia hết cho 4 và không âm được tìm ở vị trí (linear search): {result}")
+
+if result in a:
+    print(a[result])
